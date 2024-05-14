@@ -11,5 +11,6 @@ export class AppComponent {
 
   traitement(msg) {
     alert(msg);
+    //('https://github.com/n2sy/ng-GL-P-24');
   }
 }
