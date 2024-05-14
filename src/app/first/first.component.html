@@ -1,0 +1,9 @@
+<p>Je m'appelle {{ prenom }} </p>
+
+<div [hidden]="hd" [style.backgroundColor]="cl">Cours d'Angular</div>
+
+<input [(ngModel)]="prenom" type="text" />
+
+<button (click)="clickHandler()">Click me</button>
+
+<app-child (msgToParent)="traitement($event)" [myColor]="cl"></app-child>
