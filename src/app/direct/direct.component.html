@@ -1,0 +1,22 @@
+<div
+  [ngStyle]="{
+    backgroundColor: bgColor,
+    color: txtColor
+  }"
+>
+  Exemple de ngStyle
+</div>
+
+<div
+  [ngClass]="{
+    c1: class1,
+    c2: class2,
+    c3: class3
+  }"
+>
+  Exemple de ngClass
+</div>
+
+<button (click)="activeC1()" class="btn btn-primary">Active c1</button>
+<button (click)="activeC2()" class="btn btn-primary">Active c2</button>
+<button (click)="activeC3()" class="btn btn-primary">Active c3</button>
