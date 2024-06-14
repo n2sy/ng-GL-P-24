@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Candidat } from '../models/candidat';
+import { GestionRecruesService } from '../services/gestion-recrues.service';
 
 @Component({
   selector: 'app-details',
@@ -8,4 +9,12 @@ import { Candidat } from '../models/candidat';
 })
 export class DetailsComponent {
   @Input() selCandidat: Candidat;
+  afficherRecruterBn = false;
+
+  constructor(private recService: GestionRecruesService) {}
+
+  addNewRecrue() {
+    this.recService.addRecrue(this.selCandidat);
+    this.afficherRecruterBn = !this.afficherRecruterBn;
+  }
 }
