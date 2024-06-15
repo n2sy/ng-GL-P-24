@@ -1,0 +1,9 @@
+<ol class="list-group">
+  @for (serv of allServers; track $index) {
+  <li [ngClass]="affecterClass(serv.statut)" class="list-group-item">
+    {{ serv.name | short : 80 }} | {{ serv.type | uppercase }} |
+    {{ serv.date_d | date | uppercase }} 
+    <span class="badge text-bg-secondary">{{ serv.statut }} </span>
+  </li>
+  }
+</ol>
