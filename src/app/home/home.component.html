@@ -1,0 +1,11 @@
+<h4>Cours d'Angular avec les GL-P</h4>
+
+<p>Navigation côté HTML</p>
+<button routerLink="cv" class="btn btn-primary">Go To CV</button>
+
+<a [routerLink]="['servers']" class="btn btn-danger">Go To Servers</a>
+
+<p>Navigation côté TS</p>
+<button (click)="goToCv()" class="btn btn-primary">Go To CV</button>
+
+<a (click)="goToServers()" class="btn btn-danger">Go To Servers</a>

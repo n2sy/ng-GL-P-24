@@ -1,25 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FirstComponent } from './first/first.component';
+import { ROUTING_GL_P } from './app.routing';
 import { ChildComponent } from './child/child.component';
+import { CustomdDirDirective } from './customd-dir.directive';
 import { CvComponent } from './cv/cv.component';
-import { ListeComponent } from './liste/liste.component';
-import { ItemComponent } from './item/item.component';
 import { DetailsComponent } from './details/details.component';
 import { DirectComponent } from './direct/direct.component';
-import { CustomdDirDirective } from './customd-dir.directive';
-<<<<<<< HEAD
-import { ServersComponent } from './servers/servers.component';
-import { ShortPipe } from './short.pipe';
-
-@NgModule({
-  declarations: [AppComponent, FirstComponent, ChildComponent, CvComponent, ListeComponent, ItemComponent, DetailsComponent, DirectComponent, CustomdDirDirective, ServersComponent, ShortPipe],
-=======
+import { FirstComponent } from './first/first.component';
+import { HomeComponent } from './home/home.component';
+import { ItemComponent } from './item/item.component';
+import { ListeComponent } from './liste/liste.component';
 import { RecruesComponent } from './recrues/recrues.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { InfosComponent } from './infos/infos.component';
+import { AddComponent } from './add/add.component';
+import { UpdateComponent } from './update/update.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,9 +33,14 @@ import { RecruesComponent } from './recrues/recrues.component';
     DirectComponent,
     CustomdDirDirective,
     RecruesComponent,
+    HomeComponent,
+    NavbarComponent,
+    InfosComponent,
+    AddComponent,
+    UpdateComponent,
+    NotFoundComponent,
   ],
->>>>>>> 4f719aacdf4e7b1bcf5dc056aba8cdfa7fad779e
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, CommonModule, FormsModule, ROUTING_GL_P],
   providers: [],
   bootstrap: [AppComponent],
 })
