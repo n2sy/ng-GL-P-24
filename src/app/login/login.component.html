@@ -1,0 +1,91 @@
+<form #f="ngForm">
+  <label for="login">Adresse Mail</label>
+  <input
+    #inpLogin="ngModel"
+    ngModel
+    name="login"
+    required
+    email
+    type="text"
+    class="form-control"
+    id="login"
+  />
+  @if (inpLogin.invalid && inpLogin.touched) {
+  <div class="alert alert-danger">Veuillez saisir une adresse mail valide</div>
+
+  }
+
+  <label for="">Mot de passe</label>
+  <input
+    #inpPassword="ngModel"
+    minlength="5"
+    ngModel
+    name="password"
+    type="text"
+    class="form-control"
+  />
+  @if (inpPassword.invalid && inpPassword.dirty) {
+  <div class="alert alert-danger">
+    Le mot de passe doit dépasser 5 caractères
+  </div>
+
+  }
+
+  <div #groupeInfos="ngModelGroup" ngModelGroup="infos">
+    <label for="">Langage préféré</label>
+    <select [ngModel]="defaultLanguage" name="langage" class="form-control">
+      <option value=""></option>
+      <option value="php">Php</option>
+      <option value="java">Java</option>
+      <option value="js">Javascript</option>
+    </select>
+    DefaultLanguage = {{ defaultLanguage }}
+    <br />
+
+    <label for="">Commentaire</label>
+    <textarea
+      class="form-control"
+      [(ngModel)]="myComment"
+      name="commentaire"
+      cols="5"
+      rows="4"
+    ></textarea>
+    MyComment = {{ myComment }}
+    <br />
+  </div>
+
+  <label for="">Gestion des erreurs</label>
+  <input
+    #exp="ngModel"
+    ngModel
+    name="exemple"
+    required
+    minlength="5"
+    pattern="nidhal"
+    type="text"
+    class="form-control"
+  />
+
+  @if(exp.invalid) {
+  <div class="alert alert-info">
+    @if(exp.errors['required']) {
+    <p>Ce champ est obligatoire</p>
+
+    } @if(exp.errors['minlength']) {
+    <p>Le nombre minimal de caractères est 5</p>
+
+    } @if(exp.errors['pattern']) {
+    <p>Le pattern est 'nidhal'</p>
+
+    }
+  </div>
+
+  }
+  <pre>
+    {{ f.value | json }}
+  </pre>
+
+  <button (click)="submitHandler(f)" type="submit" class="btn btn-dark">
+    Se connecter
+  </button>
+</form>
